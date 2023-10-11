@@ -34,6 +34,23 @@ File Name: About.html <br>
 Line Number: 19 - 21 <br>
 Description of change: added navigation button to about.html page that redirects to @/mainscreen.
 
-File name: mainscreen.html <br>
+File Name: mainscreen.html <br>
 Line Number: 23 - 25 <br>
 Description of change: Added navigation button to mainscreen.html that navigates to @/about.
+
+<h3> Project Section E:</h3>
+
+<strong>Prompt:</strong> Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database
+
+File Name: BootStrapData.java <br>
+Line Number: 46 - 117 <br>
+Description of change: adds objects for both in house parts and outsourced parts and stores them in repositories. If statement also check to add inventory if inventory is zero.
+
+File Name: BootStrapData.java <br>
+Line Number: 144 - 157 <br>
+Description of change: adds five product objects to application.  If product list is empty, it adds sample inventory upon application startup.
+
+File Name: InhousePart.java <br>
+Line Number: 19 <br>
+Description of change: Added constructor to class to simplify object creation.
+

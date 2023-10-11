@@ -16,6 +16,9 @@ public class InhousePart extends Part{
 
     public InhousePart() {
     }
+    public InhousePart(int id) {
+        this.partId = id;
+    }
 
     public int getPartId() {
         return partId;
