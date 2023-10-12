@@ -74,6 +74,7 @@
         function clearSearch() {
             window.location = "[[@{/}]]";
         }
+
     </script>
     <br><br>
     <a th:href="@{/showFormAddProduct}" class="btn btn-primary btn-sm mb-3">Add Product</a>
@@ -94,6 +95,7 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <a th:href="@{/buyProduct(productId=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Buy Now!</a>
             </td>
         </tr>
         </tbody>

@@ -54,3 +54,23 @@ File Name: InhousePart.java <br>
 Line Number: 19 <br>
 Description of change: Added constructor to class to simplify object creation.
 
+<h3>Project Section F:</h3>
+
+<strong>Prompt:</strong> F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+
+•   The “Buy Now” button must be next to the buttons that update and delete products.
+
+•   The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
+
+•   Display a message that indicates the success or failure of a purchase.
+
+File Name: mainscreen.html <br>
+Line Number: 98 <br>
+Description of change: Added "Buy Now" button to products list.  I copied the formatting from the other buttons for visual consistency.  I also mapped the button to invoke the BuyProductController (I made this in the next change.)
+
+File Name: BuyProduct Controller <br>
+Line Number: ALL (Created file) <br>
+Description of change:  Created controller mapped to /buyProduct via @RequestMapping that checks the product to make sure it exists.  If it passes that logic, it checks to make sure that the inventory is greater than zero.  Upon passing that test, it decrements the inventory by one and returns a string with a message.
+
+
+
