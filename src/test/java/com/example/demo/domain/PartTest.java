@@ -102,6 +102,30 @@ class PartTest {
     }
 
     @Test
+    void atUpperBounds() {
+        int inv=5;
+        int max=10;
+        partIn.setMaxInventory(max);
+        partIn.setInv(inv);
+        assertEquals(true, Part.atUpperBounds(inv));
+        partOut.setMaxInventory(max);
+        partOut.setInv(inv);
+        assertEquals(true,Part.atUpperBounds(inv));
+    }
+
+    @Test
+    void atLowerBoudnds() {
+        int inv=5;
+        int min=3;
+        partIn.setMinInventory(min);
+        partIn.setInv(inv);
+        assertEquals(true, Part.atLowerBounds(inv));
+        partOut.setMinInventory(min);
+        partOut.setInv(inv);
+        assertEquals(true,Part.atLowerBounds(inv));
+    }
+
+    @Test
     void getProducts() {
         Product product1= new Product();
         Product product2= new Product();
@@ -126,6 +150,8 @@ class PartTest {
         partOut.setProducts(myProducts);
         assertEquals(myProducts,partOut.getProducts());
     }
+
+
 
     @Test
     void testToString() {

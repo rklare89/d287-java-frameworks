@@ -156,5 +156,13 @@ File Name: EnufPartsValidator.java <br>
 Line Number: 36 <br>
 Description of change:  Added an or ( || ) to the if statement that validates inventory levels to also return false if inventory would drop below minInventory levels.
 
+<h3>Project Section I:</h3>
+
+<strong>Prompt:</strong> Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
+File Name: PartTest.java <br>
+Line Number: 103 - 126 <br>
+Description of change:  Added two unit tests, one for each method atUpperBounds and atLowerBounds.  Test set values for inventory and min/max and expect "true" response.
+
 
 
