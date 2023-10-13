@@ -40,6 +40,11 @@ public class AddOutsourcedPartController {
     @PostMapping("/showFormAddOutPart")
     public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
         theModel.addAttribute("outsourcedpart",part);
+
+        if (!Part.invIsValid(part.getInv())) {
+            bindingResult.rejectValue("inv", "error.inv", "Inventory must be between min and max values.");
+        }
+
         if(bindingResult.hasErrors()){
             return "OutsourcedPartForm";
         }

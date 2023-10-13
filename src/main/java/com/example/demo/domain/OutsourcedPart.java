@@ -14,7 +14,9 @@ import javax.persistence.Entity;
 public class OutsourcedPart extends Part{
 String companyName;
 
+
     public OutsourcedPart() {
+
     }
 
     public String getCompanyName() {

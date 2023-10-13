@@ -56,7 +56,7 @@ Description of change: Added constructor to class to simplify object creation.
 
 <h3>Project Section F:</h3>
 
-<strong>Prompt:</strong> F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+<strong>Prompt:</strong> Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 
 •   The “Buy Now” button must be next to the buttons that update and delete products.
 
@@ -71,6 +71,66 @@ Description of change: Added "Buy Now" button to products list.  I copied the fo
 File Name: BuyProduct Controller <br>
 Line Number: ALL (Created file) <br>
 Description of change:  Created controller mapped to /buyProduct via @RequestMapping that checks the product to make sure it exists.  If it passes that logic, it checks to make sure that the inventory is greater than zero.  Upon passing that test, it decrements the inventory by one and returns a string with a message.
+
+<h3>Project Section G:</h3>
+
+<strong>Prompt:</strong> Modify the parts to track maximum and minimum inventory by doing the following:
+
+•   Add additional fields to the part entity for maximum and minimum inventory.
+
+•   Modify the sample inventory to include the maximum and minimum fields.
+
+•   Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+
+•   Rename the file the persistent storage is saved to.
+
+•   Modify the code to enforce that the inventory is between or at the minimum and maximum value.
+
+File Name: part.java <br>
+Line Number: 33-37 <br>
+Description of change:  Added minInventory and maxInventory fields and used @Min and @Max to validate methods and return error messages if exceeded.
+
+File Name: part.java <br>
+Line Number: 60-66 <br>
+Description of change:  Added overloaded constructor that includes minInventory and maxInventory fields.
+
+File Name: part.java <br>
+Line Number: 101-111 <br>
+Description of change:  Added getters and setters for minInventory and maxInventory.
+
+File Name: BootStrapData.java <br>
+Line Number: 50-51, 57-58, 64-65, 71-72, 78-79, 87-88, 96-97, 105-106, 114-115, 123-124 <br>
+Description of change:  Added min and max Inventory fields to In-House and Outsourced parts.
+
+File Name: InhousePartForm.html <br>
+Line Number: 26-29 <br>
+Description of change: Added input fields for minInventory and maxInventory.  I also cleaned up the indentations for the entire page because the form section had a bunch of different indentation styles.  I think it's easier to read now.
+
+File Name: OutsourcedPartForm.html <br>
+Line Number: 25-28 <br>
+Description of change: Added input fields for minInventory and maxInventory.  I also cleaned up the indentations for the entire page because the form section had a bunch of different indentation styles.  I think it's easier to read now.
+
+File Name: KlareCustomGuitarsDB <br>
+Line Number: N/A <br>
+Description of change:  Changed the persistent DB file to KlareCustomGuitarsDB
+
+File Name: application.properties <br>
+Line Number: 6 <br>
+Description of change:  Changed DB file source name to KlareCustomGuitarsDB
+
+File Name: Part.java <br>
+Line Number: 122-127 <br>
+Description of change:  Added boolean invIsValid method to determine if passed value is between minInventory and maxInventory.
+
+File Name: AddInhousePartController.java <br>
+Line Number: 43-45 <br>
+Description of change:  Added if statement to invoke invIsValid method.  If false, uses theBindingResult.rejectValue to display an error message.
+
+File Name: AddOutsourcedPartController.java <br>
+Line Number: 44-46 <br>
+Description of change:  Added if sate to invoke invIsValid method.  If false, uses bindingResult.rejectValue to display an error message.
+
+
 
 
 

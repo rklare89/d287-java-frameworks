@@ -47,26 +47,36 @@ public class BootStrapData implements CommandLineRunner {
         bridge.setName("Nickel Bridge");
         bridge.setPrice(149.00);
         bridge.setInv(5);
+        bridge.setMinInventory(1);
+        bridge.setMaxInventory(45);
 
         InhousePart tuner = new InhousePart(2);
         tuner.setName("Nickel Tuners");
         tuner.setPrice(199.00);
         tuner.setInv(5);
+        tuner.setMinInventory(1);
+        tuner.setMaxInventory(45);
 
         InhousePart pots = new InhousePart(3);
         pots.setName("Audio Taper Pots");
         pots.setPrice(40.00);
         pots.setInv(20);
+        pots.setMinInventory(1);
+        pots.setMaxInventory(45);
 
         InhousePart strings = new InhousePart(4);
         strings.setName("KCG RoundWound Nickel Strings");
         strings.setPrice(19.00);
         strings.setInv(10);
+        strings.setMinInventory(1);
+        strings.setMaxInventory(45);
 
         InhousePart instCase = new InhousePart(5);
         instCase.setName("KCG Hardshell Case");
         instCase.setPrice(199.00);
         instCase.setInv(5);
+        instCase.setMinInventory(1);
+        instCase.setMaxInventory(45);
 
         OutsourcedPart bkMules = new OutsourcedPart();
         bkMules.setId(10);
@@ -74,6 +84,8 @@ public class BootStrapData implements CommandLineRunner {
         bkMules.setPrice(349.00);
         bkMules.setName("Bare Knuckle - Mules");
         bkMules.setCompanyName("Bare Knuckle Pickups");
+        bkMules.setMinInventory(1);
+        bkMules.setMaxInventory(45);
 
         OutsourcedPart bkRebelYell = new OutsourcedPart();
         bkRebelYell.setId(11);
@@ -81,6 +93,8 @@ public class BootStrapData implements CommandLineRunner {
         bkRebelYell.setPrice(349.00);
         bkRebelYell.setName("Bare Knuckle - Rebel Yell");
         bkRebelYell.setCompanyName("Bare Knuckle Pickups");
+        bkRebelYell.setMinInventory(1);
+        bkRebelYell.setMaxInventory(45);
 
         OutsourcedPart skbCase = new OutsourcedPart();
         skbCase.setId(12);
@@ -88,6 +102,8 @@ public class BootStrapData implements CommandLineRunner {
         skbCase.setPrice(249.00);
         skbCase.setName("SKB Hardshell Case");
         skbCase.setCompanyName("SKB");
+        skbCase.setMinInventory(1);
+        skbCase.setMaxInventory(45);
 
         OutsourcedPart fralin = new OutsourcedPart();
         fralin.setId(13);
@@ -95,6 +111,8 @@ public class BootStrapData implements CommandLineRunner {
         fralin.setPrice(449.99);
         fralin.setName("Lindy Fralin - Classic");
         fralin.setCompanyName("Lindy Fralin Pickups");
+        fralin.setMinInventory(1);
+        fralin.setMaxInventory(45);
 
         OutsourcedPart drStrings = new OutsourcedPart();
         drStrings.setId(14);
@@ -102,6 +120,8 @@ public class BootStrapData implements CommandLineRunner {
         drStrings.setPrice(14.99);
         drStrings.setName("DR Pure Blues Strings");
         drStrings.setCompanyName("DR");
+        drStrings.setMinInventory(1);
+        drStrings.setMaxInventory(45);
 
         if(partRepository.count() == 0) {
             partRepository.save(bridge);
