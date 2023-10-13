@@ -130,7 +130,31 @@ File Name: AddOutsourcedPartController.java <br>
 Line Number: 44-46 <br>
 Description of change:  Added if sate to invoke invIsValid method.  If false, uses bindingResult.rejectValue to display an error message.
 
+<h3>Project Section: H</h3>
 
+<strong>Prompt:</strong> Add validation for between or at the maximum and minimum fields. The validation must include the following:
+
+•   Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
+
+•   Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
+
+•   Display error messages when adding and updating parts if the inventory is greater than the maximum.
+
+File Name: Part.java <br>
+Line Number: 129-141 <br>
+Description of change:  Added two a method atLowerBound(int) to check to see if passed value is at the minInventory and another method atUppperBound to check to see if passed value is at maxInventory.
+
+File Name: AddInhousePartController.java <br>
+Line Number: 47-53 <br>
+Description of change:  Added if statements to validate if inventory amounts are at max or min inventory.
+
+File Name: ValidEnufParts.java <br>
+Line Number: 26 <br>
+Description of change:  Edited error message to reflect changes made to the EnufPartsValidator class.
+
+File Name: EnufPartsValidator.java <br>
+Line Number: 36 <br>
+Description of change:  Added an or ( || ) to the if statement that validates inventory levels to also return false if inventory would drop below minInventory levels.
 
 
 

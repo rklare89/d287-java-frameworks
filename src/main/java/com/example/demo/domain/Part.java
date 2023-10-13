@@ -126,6 +126,20 @@ public abstract class Part implements Serializable {
         else { return false; }
     }
 
+    public static boolean atLowerBounds(int inv) {
+        if(inv <= (minInventory - 1)){
+            return false;
+        }
+        else { return true; }
+    }
+
+    public static boolean atUpperBounds(int inv) {
+        if (inv > maxInventory) {
+            return false;
+        }
+        else { return true; }
+    }
+
     public String toString(){
         return this.name;
     }
