@@ -164,5 +164,13 @@ File Name: PartTest.java <br>
 Line Number: 103 - 126 <br>
 Description of change:  Added two unit tests, one for each method atUpperBounds and atLowerBounds.  Test set values for inventory and min/max and expect "true" response.
 
+<h3>Project Section: J</h3>
+
+<strong>Prompt:</strong> Remove the class files for any unused validators in order to clean your code.
+
+File Name:  DeletePartsValidator.java <br>
+Line Number: N/A <br>
+Description of change: Removed DeletePartsValidator class because it had zero usages in the completed application.
+
 
 
