@@ -7,9 +7,11 @@ import com.example.demo.service.PartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,9 +21,9 @@ public class BuyProductController {
     @Autowired
     private ProductRepository productRepository;
 
-    @RequestMapping("/buyProduct")
-    @ResponseBody
+    @GetMapping("/buyProduct")
     public String buyProduct(@RequestParam("productId") Long productId) {
+
         Optional<Product> purchaseProd = productRepository.findById(productId);
 
         if (purchaseProd.isPresent()) {
@@ -30,12 +32,12 @@ public class BuyProductController {
             if (product.getInv() > 0) {
                 product.setInv(product.getInv() - 1);
                 productRepository.save(product);
-                return "Purchase Successful! Go Make Some Sweet Music!!";
+                return "purchaseSuccessful";
             } else {
-                return "Oh No! This product is out of stock.  Check again soon!";
+                return "outOfStock";
             }
         } else {
-            return "Whoops, it looks like this product may not exist!";
+            return "outOfStock";
         }
     }
 }

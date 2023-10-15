@@ -172,5 +172,19 @@ File Name:  DeletePartsValidator.java <br>
 Line Number: N/A <br>
 Description of change: Removed DeletePartsValidator class because it had zero usages in the completed application.
 
+<h2 style="background: #FFC107; color: black;">Revisions:</h2>
 
+<strong>Notes from evaluator:</strong>  The buy now button was apparent in the submission and aligned correctly. The submission was not fully developed, as the confirmation page did not have a way to return to the main page after buying an item.
+
+File Name:  purchaseSuccessful.html <br>
+Line Number: All <br>
+Description of change:  I added a view for the BuyProductController can reference for successful purchases.
+
+File name:  outOfStock.html <br>
+Line Number: All <br>
+Description of change:  I added a view for the BuyProductController to reference in the event that a product is out of stock or does not exist.
+
+File Name:  BuyProductController.java <br>
+Line Number: 35, 37, 40 <br>
+Description of change:  I adjusted my previous code that had returned strings to return the html views that I created for each situation.  
 
